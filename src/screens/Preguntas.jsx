@@ -9,6 +9,13 @@ const preguntasBc = new BroadcastChannel("preguntasBc");
   body.style.backgroundColor = `${event.data}`
 };
 
+const todosBc = new BroadcastChannel("todosBc");
+// A handler that only logs the event to the console:
+todosBc.onmessage = (event) => {
+console.log(event.data);
+const body = document.querySelector('body')
+  body.style.backgroundColor = `${event.data}`
+};
 
   return (
     <>

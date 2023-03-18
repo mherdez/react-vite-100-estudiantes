@@ -5,16 +5,25 @@ const MarcadorEquipo1 = () => {
 const equipo1Bc = new BroadcastChannel("equipo1Bc");
 // A handler that only logs the event to the console:
 equipo1Bc.onmessage = (event) => {
-console.log(event.data);
 const body = document.querySelector('body')
-  body.style.backgroundColor = `${event.data}`
+  body.style.backgroundColor = `${event.data.color}`
+};
+
+const todosBc = new BroadcastChannel("todosBc");
+// A handler that only logs the event to the console:
+todosBc.onmessage = (event) => {
+const body = document.querySelector('body')
+body.style.backgroundColor = `${event.data.color}`
+if(event.data.texto != '') {
+  console.log(event.data.texto)
+}
 };
 
 
   return (
     <>
       <h1>Marcador Equipo 1</h1>
-      {/* <h3>{event.data}</h3> */}
+      <h3></h3>
     </>
   );
 };
