@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import './Marcador.css';
+
 const MarcadorEquipo2 = () => {
 
   const [textoH3, setTextoH3] = useState('')

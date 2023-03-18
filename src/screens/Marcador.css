@@ -1,0 +1,33 @@
+.score-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid yellow;
+  padding: 20px;
+  max-width: 600px;
+  height: 300px;
+  margin: 0 auto;
+}
+.score-puntos {
+  font-size: 7em;
+  text-shadow: 0px 0px 15px rgb(255, 215, 38);
+}
+.score-equipo {
+  font-size: 3.2em;
+  color: rgb(255, 215, 38);
+}
+.container {
+  position: relative;
+}
+.score-xxx {
+  position: absolute;
+  font-size: 250px;
+  color: red;
+  font-weight: 900;
+  text-shadow: 0px 0px 15px white;
+  letter-spacing: 50px;
+  left: 50%;
+  transform: translateX(-47%);
+  bottom: -85%;
+}

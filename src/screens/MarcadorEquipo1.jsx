@@ -1,31 +1,35 @@
 import { useState } from "react";
+import './Marcador.css';
 
 const MarcadorEquipo1 = () => {
 
   const [textoH3, setTextoH3] = useState('')
 
-  // Connection to a broadcast channel
-const equipo1Bc = new BroadcastChannel("equipo1Bc");
-// A handler that only logs the event to the console:
-equipo1Bc.onmessage = (event) => {
-const body = document.querySelector('body')
-  body.style.backgroundColor = `${event.data.color}`
+  const equipo1Bc = new BroadcastChannel("equipo1Bc");
+  const todosBc = new BroadcastChannel("todosBc");
+
+
+  equipo1Bc.onmessage = (event) => {
+    const x = Array(event.data.x).fill('X')
+    console.log(x)
+    if(event.data.x <= 3) setTextoH3(x)
 };
 
-const todosBc = new BroadcastChannel("todosBc");
 // A handler that only logs the event to the console:
 todosBc.onmessage = (event) => {
-const body = document.querySelector('body')
-body.style.backgroundColor = `${event.data.color}`
-  console.log(event.data.texto)
   setTextoH3(event.data.texto)
 };
 
 
   return (
     <>
-      <h1>Marcador Equipo 1</h1>
-      <h2>{textoH3}</h2>
+      <div className="container">
+        <div className="score-container">
+          <h1 className="score-puntos">0</h1>
+          <h2 className="score-equipo">Equipo 1</h2>
+        </div>
+        <h3 className="score-xxx">{textoH3}</h3>
+      </div>
     </>
   );
 };
