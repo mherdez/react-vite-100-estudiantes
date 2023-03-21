@@ -2,7 +2,7 @@
   "name": "react-vite-100-estudiantes",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://mherdez.github.io/react-gh-pages",
+  "homepage": "https://mherdez.github.io/react-vite-100-estudiantes",
   "type": "module",
   "scripts": {
     "dev": "vite",
